@@ -8,17 +8,11 @@ services:
     environment:
       STATSD_HOST: "statsd-exporter"
       STATSD_PORT: "9125"
-    # command: "tail -f /dev/null"
-    # command: "gunicorn --statsd-host=statsd-exporter:9125 --statsd-prefix=main --bind 0.0.0.0:8000 app:app"
   statsd-exporter:
     image: prom/statsd-exporter:v0.22.4
     ports:
       - "9125:9125"
       - "9102:9102"
-    # volumes:
-    #   - ./etc/statsd-exporter/:/statsd/
-    # command:
-    #   - "--statsd.mapping-config=/statsd/statsd.conf"
   prometheus:
     image: prom/prometheus:v2.33.5
     ports:
