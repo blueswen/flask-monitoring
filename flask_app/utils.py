@@ -19,6 +19,7 @@ class StatsdMiddleware:
         self.__application = application
         self.__app_name = app_name
 
+        # send service info with tags
         statsd.gauge("flask.info", 1, tags=[
             f"app_name:{self.__app_name}",
         ])
@@ -31,6 +32,7 @@ class StatsdMiddleware:
         }
 
         def _start_response(status, headers, *args, **kwargs):
+            # log http status code when each response start
             statsd.increment(
                 f"flask.request_status_total",
                 tags=[
@@ -42,6 +44,7 @@ class StatsdMiddleware:
             )
             return start_response(status, headers, *args)
 
+        # timing each request
         with statsd.timed(
             f"flask.request_duration_seconds",
             tags=[
