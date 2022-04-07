@@ -106,7 +106,7 @@ grafana:
 
 #### Dashboard
 
-Flask monitoring dashboard from ```flask-monitoring-board.json```
+Flask monitoring dashboard from ```etc/dashboards/flask-monitoring.json```
 
 This dashboard follows RED method proposed by [Weaveworks](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/), and monitors three key metrics:
 
