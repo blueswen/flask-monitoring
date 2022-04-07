@@ -7,9 +7,9 @@ Monitor Flask application through custom StatsD metrics with Prometheus and Graf
 3. Grafana scrapes data from Prometheus
 
 ```txt
-+-----------------+                     +-------------------+                        +--------------+                +-----------+
-|  Flask(StatsD)  |---(UDP repeater)--->|  statsd_exporter  |<---(scrape /metrics)---|  Prometheus  | <---(scrape)---|  Grafana  |
-+-----------------+                     +-------------------+                        +--------------+                +-----------+
++-----------------+                     +-------------------+                        +--------------+               +-----------+
+|  Flask(StatsD)  |---(UDP repeater)--->|  statsd_exporter  |<---(scrape /metrics)---|  Prometheus  | <---(query)---|  Grafana  |
++-----------------+                     +-------------------+                        +--------------+               +-----------+
 ```
 
 ## Quick Start
