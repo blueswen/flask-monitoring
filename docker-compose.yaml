@@ -27,6 +27,8 @@ services:
       - "3000:3000"
     volumes:
       - ./etc/grafana/:/etc/grafana/provisioning/datasources
+      - ./etc/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
+      - ./etc/dashboards:/etc/grafana/dashboards
     depends_on:
       - prometheus
     environment:

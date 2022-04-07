@@ -21,8 +21,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1648918473052,
+  "iteration": 1649342745221,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -532,12 +531,12 @@
             "mode": "percentage",
             "steps": [
               {
-                "color": "red",
+                "color": "green",
                 "value": null
               },
               {
-                "color": "green",
-                "value": 80
+                "color": "red",
+                "value": 10
               }
             ]
           },
@@ -865,6 +864,6 @@
   "timezone": "",
   "title": "flask monitoring",
   "uid": "NgPjSHsnz",
-  "version": 4,
+  "version": 1,
   "weekStart": ""
 }

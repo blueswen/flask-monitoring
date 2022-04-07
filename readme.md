@@ -21,18 +21,13 @@ Monitor Flask application through custom StatsD metrics with Prometheus and Graf
    docker-compose up -d
    ```
 
-2. Import Grafana dashboard
-
-   1. Go to Grafana [http://localhost:3000/](http://localhost:3000/)
-   2. Create dashboard with import with panel json [flask-monitoring-board.json](./flask-monitoring-board.json)
-
-3. Send requests with [siege](https://linux.die.net/man/1/siege) to flask app
+2. Send requests with [siege](https://linux.die.net/man/1/siege) to flask app
 
    ```bash
    bash request-script.sh
    ```
 
-4. Check dashboard
+3. Check predefined dashboard ```flask monitoring``` on Grafana [http://localhost:3000/](http://localhost:3000/)
 
    dashboard screenshot
 
@@ -95,6 +90,18 @@ datasources:
     version: 1
     # <bool> allow users to edit datasources from the UI.
     editable: false
+```
+
+Load predefined dashboard with ```etc/dashboards.yaml``` and ```etc/dashboards/flask-monitoring.json```.
+
+```yaml
+# grafana in docker-compose.yaml
+grafana:
+    image: grafana/grafana:8.4.3
+    volumes:
+      - ./etc/grafana/:/etc/grafana/provisioning/datasources
+      - ./etc/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml # dashboard setting
+      - ./etc/dashboards:/etc/grafana/dashboards # dashboard json files directory
 ```
 
 #### Dashboard
