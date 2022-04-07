@@ -4,7 +4,7 @@ Monitor Flask application through custom StatsD metrics with Prometheus and Graf
 
 1. Flask app sends StatsD format metrics by UDP to statsd_exporter
 2. Prometheus scrapes prometheus format metrics from statsd_exporter 
-3. Grafana scrapes data from Prometheus
+3. Grafana queries data from Prometheus
 
 ```txt
 +-----------------+                     +-------------------+                        +--------------+               +-----------+
