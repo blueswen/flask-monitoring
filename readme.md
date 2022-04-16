@@ -29,9 +29,11 @@ Monitor Flask application through custom StatsD metrics with Prometheus and Graf
 
 3. Check predefined dashboard ```flask monitoring``` on Grafana [http://localhost:3000/](http://localhost:3000/)
 
-   dashboard screenshot
+   Dashboard screenshot:
 
    ![Flask Monitoring Dashboard](./dashboard.png)
+
+   Dashboard is also available on [Grafana Dashboards](https://grafana.com/grafana/dashboards/16111).
 
 
 ## Details
